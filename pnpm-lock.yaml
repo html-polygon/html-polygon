@@ -14,8 +14,8 @@ devDependencies:
     specifier: 8.37.0
     version: 8.37.0
   '@types/node':
-    specifier: 18.16.7
-    version: 18.16.7
+    specifier: 18.16.9
+    version: 18.16.9
   '@types/prettier':
     specifier: 2.7.2
     version: 2.7.2
@@ -329,7 +329,7 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.4
-      '@types/node': 18.16.7
+      '@types/node': 18.16.9
       '@types/responselike': 1.0.0
     dev: true
 
@@ -359,11 +359,11 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 18.16.7
+      '@types/node': 18.16.9
     dev: true
 
-  /@types/node@18.16.7:
-    resolution: {integrity: sha512-MFg7ua/bRtnA1hYE3pVyWxGd/r7aMqjNOdHvlSsXV3n8iaeGKkOaPzpJh6/ovf4bEXWcojkeMJpTsq3mzXW4IQ==}
+  /@types/node@18.16.9:
+    resolution: {integrity: sha512-IeB32oIV4oGArLrd7znD2rkHQ6EDCM+2Sr76dJnrHwv9OHBTTM6nuDLK9bmikXzPa0ZlWMWtRGo/Uw4mrzQedA==}
     dev: true
 
   /@types/prettier@2.7.2:
@@ -385,7 +385,7 @@ packages:
   /@types/responselike@1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 18.16.7
+      '@types/node': 18.16.9
     dev: true
 
   /@types/scheduler@0.16.3:
