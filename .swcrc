@@ -5,12 +5,7 @@
   },
   "jsc": {
     "parser": {
-      "syntax": "typescript",
-    },
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "syntax": "typescript"
     }
   },
   "exclude": [

@@ -46,16 +46,6 @@ const eslintConfig = {
     ],
     'prettier/prettier': 'error',
   },
-  settings: {
-    'import/resolver': {
-      'eslint-import-resolver-custom-alias': {
-        alias: {
-          '@': './src',
-        },
-        extensions: ['.ts', '.tsx', '.d.ts'],
-      },
-    },
-  },
 }
 
 // eslint-disable-next-line no-undef
