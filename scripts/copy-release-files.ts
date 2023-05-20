@@ -1,12 +1,4 @@
-import {
-  readFileSync,
-  writeFileSync,
-  copyFileSync,
-  // existsSync,
-  // mkdirSync,
-  // rmSync,
-  // readdirSync,
-} from 'node:fs'
+import { readFileSync, writeFileSync, copyFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -37,54 +29,3 @@ docFiles.forEach((docFile) => {
   const docPackageURL = fileURLToPath(new URL(docPackagePath, import.meta.url))
   copyFileSync(docURL, docPackageURL)
 })
-
-// Copy any type declarations that are needed in the distribution
-// const typeGroups = [{ dir: 'core', files: ['index.d.ts'] }]
-// typeGroups.forEach((typeGroup) => {
-//   const typeGroupPath = join('..', '..', 'src', typeGroup.dir)
-//   const typeGroupPackagePath = join('..', '..', 'dist', 'types', typeGroup.dir)
-//   const typeGroupPackageURL = fileURLToPath(
-//     new URL(typeGroupPackagePath, import.meta.url)
-//   )
-
-//   if (!existsSync(typeGroupPackageURL)) {
-//     mkdirSync(typeGroupPackageURL, { recursive: true })
-//   }
-
-//   typeGroup.files.forEach((typeFile) => {
-//     const typePath = join(typeGroupPath, typeFile)
-//     const typeURL = fileURLToPath(new URL(typePath, import.meta.url))
-//     const typePackagePath = join(typeGroupPackagePath, typeFile)
-//     const typePackageURL = fileURLToPath(
-//       new URL(typePackagePath, import.meta.url)
-//     )
-//     copyFileSync(typeURL, typePackageURL)
-//   })
-// })
-
-// Remove empty javascript files generated from the type declaration files
-// typeGroups.forEach((typeGroup) => {
-//   const typeGroupPackagePath = join('..', '..', 'dist', typeGroup.dir)
-//   typeGroup.files.forEach((typeFile) => {
-//     const typePackagePath = join(
-//       typeGroupPackagePath,
-//       typeFile.replace(/\.d\.ts$/, '.d.js')
-//     )
-//     const typePackageURL = fileURLToPath(
-//       new URL(typePackagePath, import.meta.url)
-//     )
-//     if (existsSync(typePackageURL)) {
-//       rmSync(typePackageURL)
-//     }
-//   })
-//   const typeGroupPackageURL = fileURLToPath(
-//     new URL(typeGroupPackagePath, import.meta.url)
-//   )
-//   if (!existsSync(typeGroupPackageURL)) {
-//     return
-//   }
-//   const typeGroupDir = readdirSync(typeGroupPackageURL)
-//   if (typeGroupDir.length < 1) {
-//     rmSync(typeGroupPackageURL, { recursive: true })
-//   }
-// })
