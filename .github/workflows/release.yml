@@ -29,7 +29,7 @@ jobs:
 
     # get latest version number
     - name: Install semver package
-      run: pnpm add semver
+      run: pnpm add --workspace-root semver
     - name: Retrieve the latest release and current package versions
       id: get-releases
       uses: actions/github-script@v6
