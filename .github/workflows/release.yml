@@ -45,7 +45,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
               })
-
+              console.log(latestRelease)
               latestVersion =
                 typeof latestRelease === 'undefined' ||
                 typeof latestRelease.data === 'undefined'
@@ -57,13 +57,13 @@ jobs:
               console.info(
                 'Could not evaluate latest release version, using v0.0.0'
               )
+            } finally {
+              return latestVersion
             }
-            
-            return latestVersion
           }
 
           const getPackageVersion = async (path = './') => {
-            if (!path.trim().startsWith('./')) {
+            if (!(path.trim().startsWith('./'))) {
               throw new Error(
                 'path provided to getPackageVersion must begin with \'./\''
               )
@@ -101,31 +101,33 @@ jobs:
               console.info(
                 'Could not evaluate current package version, using v0.0.0'
               )
+            } finally {
+              return packageVersion
             }
           }
 
           const latestReleaseVersion = await getLatestReleaseVersion()
           const workspacePackageVersion = await getPackageVersion()
           const packageNames = ['core', 'react']
-          const packageData = packageNames.map(async (packageName) => {
+          const packageData = await Promise.all(packageNames.map(async (packageName) => {
             const dir = `./packages/${packageName}`
             return {
               name: packageName,
               dir,
               version: await getPackageVersion(dir),
             }
-          })
+          }))
           packageData.forEach(({ name, dir, version }) => {
             if (!semver.eq(workspacePackageVersion, version)) {
               throw new Error(`Package "${name}" in directory ${dir} has a different version to the workspace.`)
             }
           })
 
-          return {
+          console.log({
             package: workspacePackageVersion,
             latest: latestReleaseVersion,
             latestIsNew: semver.gt(workspacePackageVersion, latestReleaseVersion)
-          }
+          })
     - name: Uninstall semver package 
       run: git restore . && pnpm install --frozen-lockfile
 
