@@ -7,7 +7,7 @@
     "html",
     "react"
   ],
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -36,7 +36,7 @@
     "dev": "pnpm dev:prepare && concurrently \"pnpm compile --watch\" \"pnpm build:types --watch\""
   },
   "dependencies": {
-    "@html-polygon/core": "0.0.4"
+    "@html-polygon/core": "0.0.5"
   },
   "devDependencies": {
     "@tsconfig/create-react-app": "1.0.3",
