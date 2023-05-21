@@ -1,3 +1,11 @@
+import {
+  isFiniteNumber,
+  isNonEmptyString,
+  isSimpleObject,
+  mergeClassNames,
+  PolygonClass,
+  type PolygonCoreParameters,
+} from '@html-polygon/core'
 import React, {
   type AriaAttributes,
   type AriaRole,
@@ -8,12 +16,8 @@ import React, {
   type ReactElement,
 } from 'react'
 
-import { isFiniteNumber, isSimpleObject, isNonEmptyString } from './core/guards'
-import { type PolygonClassOptions, PolygonClass } from './core/polygon-class'
-import { mergeClassNames } from './core/utilities'
-
-export interface PolygonParameters
-  extends PolygonClassOptions,
+export interface PolygonReactParameters
+  extends PolygonCoreParameters,
     PropsWithChildren,
     AriaAttributes {
   borderColor?: string
@@ -30,7 +34,7 @@ export interface PolygonParameters
   role?: AriaRole
 }
 
-export const Polygon: FunctionComponent<PolygonParameters> = ({
+export const Polygon: FunctionComponent<PolygonReactParameters> = ({
   sides,
   margin,
   borderWidth,
@@ -41,7 +45,6 @@ export const Polygon: FunctionComponent<PolygonParameters> = ({
   stable,
   rotate,
   center,
-  centre,
   debug,
   idSuffix,
   className,
@@ -69,11 +72,12 @@ export const Polygon: FunctionComponent<PolygonParameters> = ({
     stable,
     rotate,
     center,
-    centre,
     debug,
   })
 
+  // Sanitise inputs
   const safe = {
+    // Default border color to black
     borderColor: isNonEmptyString(borderColor) ? borderColor : 'rgb(0, 0, 0)',
     borderClassName: mergeClassNames('html-polygon-border', borderClassName),
     borderStyle: isSimpleObject(borderStyle) ? borderStyle : undefined,

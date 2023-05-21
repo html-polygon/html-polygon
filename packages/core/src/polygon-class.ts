@@ -10,12 +10,7 @@ import {
 
 import { type Point, type Shape } from '.'
 
-interface ShapeSlicePoint {
-  y: number
-  x: number[]
-}
-
-export interface PolygonClassOptions {
+export interface PolygonCoreParameters {
   sides: number | string
   margin?: number | string
   borderWidth?: number | string
@@ -24,8 +19,12 @@ export interface PolygonClassOptions {
   stable?: boolean
   rotate?: number | string
   center?: Point
-  centre?: Point
   debug?: boolean
+}
+
+interface ShapeSlicePoint {
+  y: number
+  x: number[]
 }
 
 export class PolygonClass {
@@ -71,9 +70,8 @@ export class PolygonClass {
     stable,
     rotate,
     center,
-    centre,
     debug,
-  }: PolygonClassOptions) {
+  }: PolygonCoreParameters) {
     // sanitise parameters
     this.sides = clampNumber(getNumber(sides), 3)
     this.margin = clampNumber(getNumber(margin), 0, 50)
@@ -82,11 +80,7 @@ export class PolygonClass {
     this.padding = clampNumber(getNumber(padding), 0, 50)
     this.stable = typeof stable === 'boolean' ? stable : false
     this.rotate = getNumber(rotate)
-    this.center = isPoint(center)
-      ? center
-      : isPoint(centre)
-      ? centre
-      : { x: 50, y: 50 }
+    this.center = isPoint(center) ? center : { x: 50, y: 50 }
     this.debug = typeof debug === 'boolean' ? debug : false
 
     // evaluate state

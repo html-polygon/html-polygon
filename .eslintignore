@@ -1,16 +1,9 @@
 # dependencies
-/node_modules
-
-# misc
-.DS_Store
-
-# debug
-pnpm-debug.log*
-pnpm-error.log*
+**/node_modules
 
 # compilation output
-/build
-/dist
+**/build
+**/dist
 
 # test coverage
-/coverage
+**/coverage

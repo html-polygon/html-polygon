@@ -37,62 +37,107 @@ jobs:
         script: |
           const semver = require('semver')
           
-          // get latest version
-          let latestVersion = 'v0.0.0'
-          try {
-            const latestRelease = await github.rest.repos.getLatestRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-            })
-            latestVersion =
-              typeof latestRelease === 'undefined' ||
-              typeof latestRelease.data === 'undefined'
-                ? 'v0.0.0'
-                : `v${semver.clean(latestRelease.data.tag_name)}`
-            console.info(`Found latest release version: ${latestVersion}`)
-          } catch (e) {
-            console.info(
-              'Could not evaluate latest release version, using v0.0.0'
-            )
+          const getLatestReleaseVersion = async () => {
+            let latestVersion = 'v0.0.0'
+
+            try {
+              const latestRelease = await github.rest.repos.getLatestRelease({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+              })
+
+              latestVersion =
+                typeof latestRelease === 'undefined' ||
+                typeof latestRelease.data === 'undefined'
+                  ? 'v0.0.0'
+                  : `v${semver.clean(latestRelease.data.tag_name)}`
+
+              console.info(`Found latest release version: ${latestVersion}`)
+            } catch (e) {
+              console.info(
+                'Could not evaluate latest release version, using v0.0.0'
+              )
+            }
+            
+            return latestVersion
           }
 
-          // get version from package json
-          let packageVersion = 'v0.0.0'
-          try {
-            const packageJsonRecord = await github.rest.repos.getContent({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              path: 'package.json',
-              ref: context.ref,
-            })
-            const packageJson =
-              typeof packageJsonRecord === 'undefined' ||
-              typeof packageJsonRecord.data === 'undefined'
-                ? '{ "version": "0.0.0" }'
-                : Buffer
-                    .from(packageJsonRecord.data.content, 'base64')
-                    .toString()
-            const package = JSON.parse(packageJson)
-            packageVersion = `v${semver.clean(package.version)}`
-            console.info(`Found current package version: ${packageVersion}`)
-          } catch (e) {
-            console.info(
-              'Could not evaluate current package version, using v0.0.0'
-            )
+          const getPackageVersion = async (path = './') => {
+            if (!path.trim().startsWith('./')) {
+              throw new Error(
+                'path provided to getPackageVersion must begin with \'./\''
+              )
+            }
+
+            const safePath = path
+              .trim()
+              .replace(/\/+$/, '')
+              .concat('/package.json')
+
+            let packageVersion = 'v0.0.0'
+
+            try {
+              console.info(`Getting version number from ${safePath}`)
+
+              const packageJsonRecord = await github.rest.repos.getContent({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                path: safePath,
+                ref: context.ref,
+              })
+
+              const packageJson =
+                typeof packageJsonRecord === 'undefined' ||
+                typeof packageJsonRecord.data === 'undefined'
+                  ? '{ "version": "0.0.0" }'
+                  : Buffer
+                      .from(packageJsonRecord.data.content, 'base64')
+                      .toString()
+
+              const packageObject = JSON.parse(packageJson)
+              packageVersion = `v${semver.clean(packageObject.version)}`
+              console.info(`Found current package version: ${packageVersion}`)
+            } catch (e) {
+              console.info(
+                'Could not evaluate current package version, using v0.0.0'
+              )
+            }
           }
+
+          const latestReleaseVersion = await getLatestReleaseVersion()
+          const workspacePackageVersion = await getPackageVersion()
+          const packageNames = ['core', 'react']
+          const packageData = packageNames.map(async (packageName) => {
+            const dir = `./packages/${packageName}`
+            return {
+              name: packageName,
+              dir,
+              version: await getPackageVersion(dir),
+            }
+          })
+          packageData.forEach(({ name, dir, version }) => {
+            if (!semver.eq(workspacePackageVersion, version)) {
+              throw new Error(`Package "${name}" in directory ${dir} has a different version to the workspace.`)
+            }
+          })
 
           return {
-            package: packageVersion,
-            latest: latestVersion,
-            latestIsNew: semver.gt(packageVersion, latestVersion)
+            package: workspacePackageVersion,
+            latest: latestReleaseVersion,
+            latestIsNew: semver.gt(workspacePackageVersion, latestReleaseVersion)
           }
     - name: Uninstall semver package 
       run: git restore . && pnpm install --frozen-lockfile
 
     # release to npm
-    - name: Release to NPM
+    - name: Release Core to NPM
       if: ${{ fromJSON(steps.get-releases.outputs.result).latestIsNew }}
-      run: pnpm release
+      run: pnpm --dir packages/core run release
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPMJS_ACCESS_TOKEN }}
+    - name: Release React to NPM
+      if: ${{ fromJSON(steps.get-releases.outputs.result).latestIsNew }}
+      run: pnpm --dir packages/react run release
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPMJS_ACCESS_TOKEN }}
 

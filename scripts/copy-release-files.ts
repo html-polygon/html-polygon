@@ -21,7 +21,7 @@ const distPackageContents = JSON.stringify(distPackageJson, null, '  ')
 writeFileSync(distPackageURL, distPackageContents.concat('\n'))
 
 // Copy README and LICENSE
-const docFiles = ['README.md', 'LICENSE.md']
+const docFiles = ['README.md', join('..', '..', 'LICENSE.md')]
 docFiles.forEach((docFile) => {
   const docPath = join('..', '..', docFile)
   const docURL = fileURLToPath(new URL(docPath, import.meta.url))

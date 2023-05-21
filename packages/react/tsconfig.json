@@ -1,0 +1,14 @@
+{
+  "extends": "@tsconfig/create-react-app/tsconfig.json",
+  "compilerOptions": {
+    // the base config sets this to true, so turn it to false here
+    "noEmit": false,
+    "outDir": "./dist",
+    "removeComments": true,
+    "declaration": true,
+    "declarationMap": false,
+    "declarationDir": "./dist/types"
+  },
+  "exclude": ["./node_modules"],
+  "files": ["src/index.ts"]
+}

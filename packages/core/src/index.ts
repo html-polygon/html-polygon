@@ -1,3 +1,7 @@
+export * from './guards'
+export * from './polygon-class'
+export * from './utilities'
+
 export interface Point {
   x: number
   y: number
