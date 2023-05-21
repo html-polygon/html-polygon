@@ -62,17 +62,8 @@ jobs:
             }
           }
 
-          const getPackageVersion = async (path = './') => {
-            if (!(path.trim().startsWith('./'))) {
-              throw new Error(
-                'path provided to getPackageVersion must begin with \'./\''
-              )
-            }
-
-            const safePath = path
-              .trim()
-              .replace(/\/+$/, '')
-              .concat('/package.json')
+          const getPackageVersion = async (path = 'package.json') => {
+            const safePath = path.trim()
 
             let packageVersion = 'v0.0.0'
 
@@ -110,16 +101,16 @@ jobs:
           const workspacePackageVersion = await getPackageVersion()
           const packageNames = ['core', 'react']
           const packageData = await Promise.all(packageNames.map(async (packageName) => {
-            const dir = `./packages/${packageName}`
+            const path = `packages/${packageName}/package.json`
             return {
               name: packageName,
-              dir,
-              version: await getPackageVersion(dir),
+              path,
+              version: await getPackageVersion(path),
             }
           }))
-          packageData.forEach(({ name, dir, version }) => {
+          packageData.forEach(({ name, path, version }) => {
             if (!semver.eq(workspacePackageVersion, version)) {
-              throw new Error(`Package "${name}" in directory ${dir} has a different version to the workspace.`)
+              throw new Error(`Package "${name}" at ${path} has a different version to the workspace.`)
             }
           })
 
