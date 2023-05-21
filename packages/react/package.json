@@ -36,7 +36,7 @@
     "dev": "pnpm dev:prepare && concurrently \"pnpm compile --watch\" \"pnpm build:types --watch\""
   },
   "dependencies": {
-    "@html-polygon/core": "workspace:*"
+    "@html-polygon/core": "0.0.4"
   },
   "devDependencies": {
     "@tsconfig/create-react-app": "1.0.3",
