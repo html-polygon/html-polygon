@@ -123,11 +123,11 @@ jobs:
             }
           })
 
-          console.log({
+          return {
             package: workspacePackageVersion,
             latest: latestReleaseVersion,
             latestIsNew: semver.gt(workspacePackageVersion, latestReleaseVersion)
-          })
+          }
     - name: Uninstall semver package 
       run: git restore . && pnpm install --frozen-lockfile
 
