@@ -84,7 +84,7 @@ export const Polygon: FunctionComponent<PolygonReactParameters> = ({
     idSuffix: isNonEmptyString(idSuffix) ? `-${idSuffix}` : '',
     className: mergeClassNames(
       'html-polygon',
-      `html-polygon-sides-${sides}`,
+      `html-polygon-sides-${polygon.sides}`,
       className
     ),
     style: isSimpleObject(style) ? style : undefined,

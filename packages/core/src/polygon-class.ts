@@ -29,7 +29,7 @@ interface ShapeSlicePoint {
 
 export class PolygonClass {
   // parameters
-  private sides: number
+  public sides: number
   private margin: number
   private borderWidth: number
   private hasChildren: boolean
