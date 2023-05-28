@@ -59,7 +59,7 @@ importers:
   packages/react:
     dependencies:
       '@html-polygon/core':
-        specifier: 0.0.8
+        specifier: 0.0.7
         version: link:../core
     devDependencies:
       '@tsconfig/create-react-app':
@@ -75,7 +75,7 @@ importers:
   packages/vue:
     dependencies:
       '@html-polygon/core':
-        specifier: 0.0.8
+        specifier: 0.0.7
         version: link:../core
     devDependencies:
       '@vue/tsconfig':
