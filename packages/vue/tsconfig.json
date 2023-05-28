@@ -1,0 +1,14 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    // Vue docs recommend this
+    "strict": true,
+    "outDir": "./dist",
+    "removeComments": true,
+    "declaration": true,
+    "declarationMap": false,
+    "declarationDir": "./dist/types"
+  },
+  "exclude": ["./node_modules"],
+  "files": ["src/index.ts"]
+}

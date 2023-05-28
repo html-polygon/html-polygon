@@ -1,0 +1,49 @@
+{
+  "name": "@html-polygon/vue",
+  "displayName": "HTML Polygon for Vue 3",
+  "description": "Pure HTML polygons for Vue 3, no SVG.",
+  "keywords": [
+    "polygon",
+    "html",
+    "vue",
+    "vue3"
+  ],
+  "version": "0.0.8",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sambauers/html-polygon.git"
+  },
+  "homepage": "https://html-polygon.sambauers.com",
+  "files": [
+    "src/*"
+  ],
+  "main": "src/index.ts",
+  "packageManager": "pnpm@8.5.1",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "lint": "markdownlint *.md && eslint --config ../../.eslintrc.js --ignore-path ../../.eslintignore  .",
+    "test": "echo 'No tests yet.'",
+    "compile": "swc ./src --out-dir ./dist",
+    "compile:scripts": "swc ../../scripts --out-dir ./build",
+    "clean:scripts": "rm -rf ./build/scripts",
+    "clean:build": "rm -rf ./build",
+    "copy-release-files": "pnpm compile:scripts && node ./build/scripts/copy-release-files.js && pnpm clean:scripts && pnpm clean:build",
+    "build": "pnpm clean && pnpm compile",
+    "build:types": "tsc --emitDeclarationOnly",
+    "package": "pnpm lint && pnpm test && pnpm build && pnpm build:types && pnpm copy-release-files",
+    "release": "pnpm package && pnpm publish --access public dist",
+    "dev:prepare": "pnpm clean && mkdir -p ./dist/types && pnpm copy-release-files",
+    "dev": "pnpm dev:prepare && concurrently \"pnpm compile --watch\" \"pnpm build:types --watch\""
+  },
+  "dependencies": {
+    "@html-polygon/core": "0.0.8"
+  },
+  "devDependencies": {
+    "@vue/tsconfig": "0.4.0",
+    "vue": "3.3.2"
+  },
+  "peerDependencies": {
+    "vue": ">=3.3.0"
+  }
+}

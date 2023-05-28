@@ -99,7 +99,7 @@ jobs:
 
           const latestReleaseVersion = await getLatestReleaseVersion()
           const workspacePackageVersion = await getPackageVersion()
-          const packageNames = ['core', 'react']
+          const packageNames = ['core', 'react', 'vue']
           const packageData = await Promise.all(packageNames.map(async (packageName) => {
             const path = `packages/${packageName}/package.json`
             return {
@@ -131,6 +131,11 @@ jobs:
     - name: Release React to NPM
       if: ${{ fromJSON(steps.get-releases.outputs.result).latestIsNew }}
       run: pnpm --dir packages/react run release
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPMJS_ACCESS_TOKEN }}
+    - name: Release Vue 3 to NPM
+      if: ${{ fromJSON(steps.get-releases.outputs.result).latestIsNew }}
+      run: pnpm --dir packages/vue run release
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPMJS_ACCESS_TOKEN }}
 

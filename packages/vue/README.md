@@ -1,9 +1,9 @@
-# HTML Polygon for React
+# HTML Polygon for Vue 3
 
 HTML Polygon is a polygon element generator for the following web frameworks:
 
-* React ← this package
-* [Vue 3](../vue)
+* [React](../react)
+* Vue 3 ← this package
 
 Visit the playground and complete documentation at [the HTML Polygon website](https://html-polygon.sambauers.com).
 
@@ -11,32 +11,32 @@ Visit the playground and complete documentation at [the HTML Polygon website](ht
 
 ```sh
 # NPM
-npm install @html-polygon/react
+npm install @html-polygon/vue
 
 # Yarn
-yarn add @html-polygon/react
+yarn add @html-polygon/vue
 
 # PNPM
-pnpm add @html-polygon/react
+pnpm add @html-polygon/vue
 ```
 
 ## Quick start
 
 Import the component:
 
-```jsx
-import { Polygon } from '@html-polygon/react'
+```vue
+import { Polygon } from '@html-polygon/vue'
 ```
 
 Use the component:
 
-```jsx
+```vue
 <Polygon
-  sides={5}
-  style={{
+  sides="5"
+  style="{
     height: '300px',
     width: '300px',
-  }}
+  }"
 >
   I have 5 sides.
 </Polygon>
