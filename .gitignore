@@ -10,6 +10,7 @@
 # compilation output
 **/build
 **/dist
+**/.swc
 
 # test coverage
 **/coverage
