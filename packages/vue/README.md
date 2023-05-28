@@ -33,7 +33,7 @@ Use the component:
 ```vue
 <Polygon
   sides="5"
-  style="{
+  :style="{
     height: '300px',
     width: '300px',
   }"
