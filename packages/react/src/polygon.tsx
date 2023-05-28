@@ -99,14 +99,13 @@ export const Polygon: FunctionComponent<PolygonReactParameters> = ({
   // Construct the padding shapes if there are children to pad
   let paddedChildren: ReactElement | null = null
   if (hasChildren) {
-    const topBufferHeight = polygon.bufferTop
     const topBuffer =
-      topBufferHeight > 0 ? (
+      polygon.bufferTop > 0 ? (
         <div
           id={`html-polygon-buffer-top${safe.idSuffix}`}
           className='html-polygon-buffer html-polygon-buffer-top'
           style={{
-            height: `${topBufferHeight}%`,
+            height: `${polygon.bufferTop}%`,
             ...(polygon.debug
               ? {
                   boxSizing: 'border-box',
@@ -116,18 +115,17 @@ export const Polygon: FunctionComponent<PolygonReactParameters> = ({
                 }
               : {}),
           }}
-        ></div>
+        />
       ) : null
 
     // Build the bottom buffer
-    const bottomBufferHeight = polygon.bufferBottom
     const bottomBuffer =
-      bottomBufferHeight > 0 ? (
+      polygon.bufferBottom > 0 ? (
         <div
           id={`html-polygon-buffer-bottom${safe.idSuffix}`}
           className='html-polygon-buffer html-polygon-buffer-bottom'
           style={{
-            height: `${bottomBufferHeight}%`,
+            height: `${polygon.bufferBottom}%`,
             width: '100%',
             clear: 'left',
             float: 'left',
@@ -141,7 +139,7 @@ export const Polygon: FunctionComponent<PolygonReactParameters> = ({
                 }
               : {}),
           }}
-        ></div>
+        />
       ) : null
 
     paddedChildren = (
@@ -184,7 +182,7 @@ export const Polygon: FunctionComponent<PolygonReactParameters> = ({
                     }
                   : {}),
               }}
-            ></div>
+            />
           )
         })}
 
@@ -223,7 +221,7 @@ export const Polygon: FunctionComponent<PolygonReactParameters> = ({
               clipPath: `polygon(${polygon.polygonMain})`,
               backgroundColor: 'rgba(255, 0, 0, 0.25)',
             }}
-          ></div>
+          />
         ) : null}
 
         {/* Insert the border */}
@@ -242,7 +240,7 @@ export const Polygon: FunctionComponent<PolygonReactParameters> = ({
               width: '100%',
               clipPath: `polygon(${polygon.polygonBorder})`,
             }}
-          ></div>
+          />
         ) : null}
 
         {/* Add the padded children */}
