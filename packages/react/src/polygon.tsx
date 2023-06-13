@@ -1,5 +1,4 @@
 import {
-  isFiniteNumber,
   isNonEmptyString,
   isSimpleObject,
   mergeClassNames,
@@ -7,6 +6,7 @@ import {
   type PolygonCoreParameters,
 } from '@html-polygon/core'
 import React, {
+  Children,
   type AriaAttributes,
   type AriaRole,
   type CSSProperties,
@@ -58,10 +58,26 @@ export const Polygon: FunctionComponent<PolygonReactParameters> = ({
   children,
   ...ariaAttributes
 }) => {
-  const hasChildren =
-    isSimpleObject(children) ||
-    (isNonEmptyString(children) && children.trim() !== '') ||
-    isFiniteNumber(children)
+  let hasChildren = false
+  Children.forEach(children, (child) => {
+    if (hasChildren) {
+      return
+    }
+
+    if (
+      child === null ||
+      typeof child === 'undefined' ||
+      typeof child === 'boolean'
+    ) {
+      return
+    }
+
+    if (typeof child === 'string' && child.trim() === '') {
+      return
+    }
+
+    hasChildren = true
+  })
 
   const polygon = new PolygonClass({
     sides,

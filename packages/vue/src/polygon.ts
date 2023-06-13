@@ -42,6 +42,8 @@ export const Polygon = defineComponent({
   },
   setup(props, { slots }) {
     return () => {
+      // This does not currently check the validity of the children like the
+      // React package does
       const hasChildren = isSlot(slots.default) && slots.default().length > 0
 
       const defaultSlot = isSlot(slots.default) && slots.default()[0]
