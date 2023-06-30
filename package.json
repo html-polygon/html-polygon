@@ -14,7 +14,7 @@
     "url": "git://github.com/sambauers/html-polygon.git"
   },
   "homepage": "https://html-polygon.sambauers.com",
-  "packageManager": "pnpm@8.6.2",
+  "packageManager": "pnpm@8.6.5",
   "scripts": {
     "lint": "markdownlint *.md && eslint .",
     "regenerate-pnpm-lock": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules && rm pnpm-lock.yaml && pnpm install",
