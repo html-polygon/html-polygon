@@ -170,7 +170,7 @@ export const Polygon = defineComponent({
             ? {}
             : { clipPath: `polygon(${polygon.polygonMain})` },
         },
-        polygon.hasBorder || polygon.debug
+        polygon.polygonBorder || polygon.debug
           ? h(
               'div',
               {
@@ -198,7 +198,7 @@ export const Polygon = defineComponent({
                       },
                     })
                   : undefined,
-                polygon.hasBorder
+                polygon.polygonBorder
                   ? h('div', {
                       id: `html-polygon-border${safe.idSuffix}`,
                       class: 'safe.borderClassName',

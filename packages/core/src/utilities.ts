@@ -1,22 +1,41 @@
 import { isFiniteNumber, isNonEmptyString } from './guards'
 
-export const getNumber = (maybeNumber?: number | string): number =>
-  isFiniteNumber(maybeNumber)
-    ? maybeNumber
-    : isNonEmptyString(maybeNumber)
-    ? Number(maybeNumber)
-    : 0
+export const getNumber = (maybeNumber?: number | string): number => {
+  if (isFiniteNumber(maybeNumber)) {
+    return maybeNumber
+  }
+
+  if (isNonEmptyString(maybeNumber)) {
+    const digits = maybeNumber.replace(/([^\d\\.xabcdef])/i, '').toLowerCase()
+    const digitsNumber = Number(digits)
+
+    if (isFiniteNumber(digitsNumber)) {
+      return digitsNumber
+    }
+  }
+
+  return 0
+}
 
 export const clampNumber = (
   value: number,
   min?: number,
   max?: number
-): number =>
-  isFiniteNumber(min) && value < min
-    ? min
-    : isFiniteNumber(max) && value > max
-    ? max
-    : value
+): number => {
+  if (!isFiniteNumber(value)) {
+    return value
+  }
+
+  if (isFiniteNumber(min) && value < min) {
+    return min
+  }
+
+  if (isFiniteNumber(max) && value > max) {
+    return max
+  }
+
+  return value
+}
 
 export const radians = (degrees: number): number => degrees * (Math.PI / 180)
 

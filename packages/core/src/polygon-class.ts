@@ -40,7 +40,7 @@ export class PolygonClass {
   public debug: boolean
 
   // state
-  public hasBorder: boolean
+  private hasBorder: boolean
   private isEven: boolean
   private radiusMain: number
   private radiusBorder: number
@@ -156,7 +156,7 @@ export class PolygonClass {
   }
 
   private getPointsBorder = () => {
-    if (this.borderWidth < 0) {
+    if (this.borderWidth <= 0) {
       return []
     }
 
@@ -176,10 +176,8 @@ export class PolygonClass {
     return points
   }
 
-  private pointsToPolygon = (points?: Point[]) =>
-    typeof points === 'undefined'
-      ? ''
-      : points.map(({ x, y }) => `${x}% ${y}%`).join(', ')
+  private pointsToPolygon = (points: Point[]) =>
+    points.map(({ x, y }) => `${x}% ${y}%`).join(', ')
 
   private getOutsideShapes = () => {
     // Get the additional points required to build the outside shapes

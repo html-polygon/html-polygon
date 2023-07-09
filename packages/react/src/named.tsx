@@ -1,65 +1,56 @@
+import React, { forwardRef } from 'react'
 import { Polygon, type PolygonReactParameters } from './polygon'
 
 export type NamedPolygonReactParameters = Omit<PolygonReactParameters, 'sides'>
 
-export const Trigon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 3, ...opts })
+const namedFactory = (sides: number, name: string) => {
+  const Named = forwardRef<HTMLDivElement, NamedPolygonReactParameters>(
+    ({ children, ...opts }, ref) => (
+      <Polygon sides={sides} ref={ref} {...opts}>
+        {children}
+      </Polygon>
+    )
+  )
+  Named.displayName = name
+  return Named
+}
 
-export const Triangle = Trigon
+export const Trigon = namedFactory(3, 'Trigon')
+export const Triangle = namedFactory(3, 'Triangle')
 
-export const Tetragon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 4, ...opts })
+export const Tetragon = namedFactory(4, 'Tetragon')
+export const Quadrilateral = namedFactory(4, 'Quadrilateral')
 
-export const Quadrilateral = Tetragon
+export const Pentagon = namedFactory(5, 'Pentagon')
 
-export const Pentagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 5, ...opts })
+export const Hexagon = namedFactory(6, 'Hexagon')
 
-export const Hexagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 6, ...opts })
+export const Heptagon = namedFactory(7, 'Heptagon')
+export const Septagon = namedFactory(7, 'Septagon')
 
-export const Heptagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 7, ...opts })
+export const Octagon = namedFactory(8, 'Octagon')
 
-export const Septagon = Heptagon
+export const Enneagon = namedFactory(9, 'Enneagon')
+export const Nonagon = namedFactory(9, 'Nonagon')
 
-export const Octagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 8, ...opts })
+export const Decagon = namedFactory(10, 'Decagon')
 
-export const Enneagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 9, ...opts })
+export const Hendecagon = namedFactory(11, 'Hendecagon')
 
-export const Nonagon = Enneagon
+export const Dodecagon = namedFactory(12, 'Dodecagon')
 
-export const Decagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 10, ...opts })
+export const Tridecagon = namedFactory(13, 'Tridecagon')
 
-export const Hendecagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 11, ...opts })
+export const Tetradecagon = namedFactory(14, 'Tetradecagon')
 
-export const Dodecagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 12, ...opts })
+export const Pentadecagon = namedFactory(15, 'Pentadecagon')
 
-export const Tridecagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 13, ...opts })
+export const Hexadecagon = namedFactory(16, 'Hexadecagon')
 
-export const Tetradecagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 14, ...opts })
+export const Heptadecagon = namedFactory(17, 'Heptadecagon')
 
-export const Pentadecagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 15, ...opts })
+export const Octadecagon = namedFactory(18, 'Octadecagon')
 
-export const Hexadecagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 16, ...opts })
+export const Enneadecagon = namedFactory(19, 'Enneadecagon')
 
-export const Heptadecagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 17, ...opts })
-
-export const Octadecagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 18, ...opts })
-
-export const Enneadecagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 19, ...opts })
-
-export const Icosihenagon = (opts: NamedPolygonReactParameters) =>
-  Polygon({ sides: 20, ...opts })
+export const Icosihenagon = namedFactory(20, 'Icosihenagon')
