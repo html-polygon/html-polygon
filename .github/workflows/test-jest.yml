@@ -1,0 +1,32 @@
+name: Test (Jest)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    # checkout
+    - name: Checkout repository code
+      uses: actions/checkout@v3
+    # install
+    - name: Setup PNPM
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8.6.6
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: '.nvmrc'
+        cache: 'pnpm'
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+    # lint
+    - name: Run tests
+      run: pnpm test
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
