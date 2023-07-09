@@ -37,11 +37,13 @@ const projectDefaultConfig = {
 const jestConfig = {
   projects: [
     {
+      displayName: 'packages/core',
       testEnvironment: 'node',
       testMatch: ['<rootDir>/packages/core/**/__tests__/**/*'],
       ...projectDefaultConfig,
     },
     {
+      displayName: 'packages/react',
       testEnvironment: 'jsdom',
       testMatch: ['<rootDir>/packages/react/**/__tests__/**/*'],
       ...projectDefaultConfig,

@@ -17,6 +17,7 @@
   "packageManager": "pnpm@8.6.6",
   "scripts": {
     "lint": "markdownlint *.md && eslint .",
+    "test": "jest --coverage",
     "regenerate-pnpm-lock": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules && rm pnpm-lock.yaml && pnpm install",
     "packages:clean": "pnpm --recursive --parallel run clean",
     "packages:lint": "pnpm --recursive --parallel run lint",
