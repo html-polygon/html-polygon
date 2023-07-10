@@ -66,8 +66,8 @@ importers:
   packages/core:
     devDependencies:
       '@tsconfig/create-react-app':
-        specifier: 1.0.3
-        version: 1.0.3
+        specifier: 2.0.0
+        version: 2.0.0
 
   packages/react:
     dependencies:
@@ -1075,10 +1075,6 @@ packages:
   /@tootallnate/once@2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
     engines: {node: '>= 10'}
-    dev: true
-
-  /@tsconfig/create-react-app@1.0.3:
-    resolution: {integrity: sha512-sAsKAmKzWJlLWpCTyaUHUhqkQEAGAIaNs90sVbZsBhqBTNTnLkcZUr7U5HLI9EUN8QppfkxfGjvaATSgZQhiGQ==}
     dev: true
 
   /@tsconfig/create-react-app@2.0.0:
