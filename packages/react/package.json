@@ -42,7 +42,7 @@
     "@testing-library/react": "14.0.0",
     "@tsconfig/create-react-app": "2.0.0",
     "@types/react": "18.2.14",
-    "jest-environment-jsdom": "29.6.0",
+    "jest-environment-jsdom": "29.6.1",
     "react": "18.2.0"
   },
   "peerDependencies": {

@@ -85,8 +85,8 @@ importers:
         specifier: 18.2.14
         version: 18.2.14
       jest-environment-jsdom:
-        specifier: 29.6.0
-        version: 29.6.0
+        specifier: 29.6.1
+        version: 29.6.1
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -3327,8 +3327,8 @@ packages:
       pretty-format: 29.6.1
     dev: true
 
-  /jest-environment-jsdom@29.6.0:
-    resolution: {integrity: sha512-/cOhoyv+uMbOh4nQPyqtkPas/uUxr5AbK6TPqMMFyj1qEJURY78RhqgBjOFIX02+Lvu5V0RWLq2qKY1dHubFOQ==}
+  /jest-environment-jsdom@29.6.1:
+    resolution: {integrity: sha512-PoY+yLaHzVRhVEjcVKSfJ7wXmJW4UqPYNhR05h7u/TK0ouf6DmRNZFBL/Z00zgQMyWGMBXn69/FmOvhEJu8cIw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
       canvas: ^2.5.0
