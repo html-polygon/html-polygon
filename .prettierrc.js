@@ -6,6 +6,7 @@ const prettierConfig = {
   semi: false,
   singleQuote: true,
   jsxSingleQuote: true,
+  trailingComma: 'es5',
 }
 
 // eslint-disable-next-line no-undef
