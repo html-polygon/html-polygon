@@ -72,7 +72,7 @@ importers:
   packages/react:
     dependencies:
       '@html-polygon/core':
-        specifier: 0.0.10
+        specifier: 0.0.11
         version: link:../core
     devDependencies:
       '@testing-library/react':
@@ -94,7 +94,7 @@ importers:
   packages/vue:
     dependencies:
       '@html-polygon/core':
-        specifier: 0.0.10
+        specifier: 0.0.11
         version: link:../core
     devDependencies:
       '@vue/tsconfig':
