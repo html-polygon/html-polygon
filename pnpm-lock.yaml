@@ -79,8 +79,8 @@ importers:
         specifier: 14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
       '@tsconfig/create-react-app':
-        specifier: 1.0.3
-        version: 1.0.3
+        specifier: 2.0.0
+        version: 2.0.0
       '@types/react':
         specifier: 18.2.14
         version: 18.2.14
@@ -1079,6 +1079,10 @@ packages:
 
   /@tsconfig/create-react-app@1.0.3:
     resolution: {integrity: sha512-sAsKAmKzWJlLWpCTyaUHUhqkQEAGAIaNs90sVbZsBhqBTNTnLkcZUr7U5HLI9EUN8QppfkxfGjvaATSgZQhiGQ==}
+    dev: true
+
+  /@tsconfig/create-react-app@2.0.0:
+    resolution: {integrity: sha512-FwBmf+PZjk+scQ05XRGvVL2XBWQEOBQ10B3ZVc4RaFkNj2Zukumdn0xLQ+LVO8NycjQfxuUw/ecYLEELs5R8oQ==}
     dev: true
 
   /@types/aria-query@5.0.1:
