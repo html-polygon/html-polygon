@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react'
+
 import { Polygon, type PolygonReactParameters } from './polygon'
 
 export type NamedPolygonReactParameters = Omit<PolygonReactParameters, 'sides'>

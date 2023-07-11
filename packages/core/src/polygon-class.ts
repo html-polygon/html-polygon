@@ -1,3 +1,4 @@
+import { type Point, type Shape } from '.'
 import { isPoint } from './guards'
 import {
   clampNumber,
@@ -7,8 +8,6 @@ import {
   round,
   spacingToRadius,
 } from './utilities'
-
-import { type Point, type Shape } from '.'
 
 export interface PolygonCoreParameters {
   sides: number | string

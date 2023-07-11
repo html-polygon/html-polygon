@@ -1,18 +1,18 @@
 import {
+  isNonEmptyString,
+  isSimpleObject,
+  mergeClassNames,
+  type Point,
+  PolygonClass,
+} from '@html-polygon/core'
+import {
+  type CSSProperties,
   defineComponent,
   h,
-  type CSSProperties,
   type PropType,
   type Slot,
   type VNode,
 } from 'vue'
-import {
-  isNonEmptyString,
-  isSimpleObject,
-  mergeClassNames,
-  PolygonClass,
-  type Point,
-} from '@html-polygon/core'
 
 export const commonPolygonProps = {
   margin: [Number, String],

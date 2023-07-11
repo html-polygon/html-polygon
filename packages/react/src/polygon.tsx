@@ -6,11 +6,11 @@ import {
   type PolygonCoreParameters,
 } from '@html-polygon/core'
 import React, {
-  Children,
-  forwardRef,
   type AriaAttributes,
   type AriaRole,
+  Children,
   type CSSProperties,
+  forwardRef,
   type MouseEventHandler,
   type PropsWithChildren,
   type ReactElement,

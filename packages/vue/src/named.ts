@@ -1,6 +1,6 @@
-import { commonPolygonProps, Polygon } from './polygon'
-
 import { defineComponent, h } from 'vue'
+
+import { commonPolygonProps, Polygon } from './polygon'
 
 const defineNamed = (name: string, sides: number) =>
   defineComponent({

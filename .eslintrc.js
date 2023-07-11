@@ -4,7 +4,7 @@
 const eslintConfig = {
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'prettier'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -26,6 +26,7 @@ const eslintConfig = {
         fixStyle: 'inline-type-imports',
       },
     ],
+    'simple-import-sort/imports': 'error',
     'prettier/prettier': 'error',
   },
 }
