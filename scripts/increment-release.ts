@@ -62,10 +62,14 @@ console.info('')
 rootPackageJson.version = newVersion
 const rootPackageContents = JSON.stringify(rootPackageJson, null, '  ')
 writeFileSync(rootPackageURL, rootPackageContents.concat('\n'))
-console.log(`--> Wrote ${rootPackageURL}`)
+console.info(`--> Wrote ${rootPackageURL}`)
 
 packageJsons.forEach(([packageURL, packageJson]) => {
   const packageContents = JSON.stringify(packageJson, null, '  ')
   writeFileSync(packageURL, packageContents.concat('\n'))
-  console.log(`--> Wrote ${packageURL}`)
+  console.info(`--> Wrote ${packageURL}`)
 })
+
+console.info('')
+console.info('Now run pnpm install!!!')
+console.info('')
