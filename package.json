@@ -19,6 +19,9 @@
     "lint": "markdownlint *.md && eslint .",
     "test": "jest --coverage",
     "regenerate-pnpm-lock": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules && rm pnpm-lock.yaml && pnpm install",
+    "increment-release-patch": "swc ./scripts/increment-release.ts --out-dir ./build && node ./build/increment-release.js --patch && rm -rf ./build",
+    "increment-release-minor": "swc ./scripts/increment-release.ts --out-dir ./build && node ./build/increment-release.js --minor && rm -rf ./build",
+    "increment-release-major": "swc ./scripts/increment-release.ts --out-dir ./build && node ./build/increment-release.js --major && rm -rf ./build",
     "packages:clean": "pnpm --recursive --parallel run clean",
     "packages:lint": "pnpm --recursive --parallel run lint",
     "packages:test": "pnpm --recursive --parallel run test",
@@ -53,6 +56,7 @@
     "jest": "29.6.1",
     "markdownlint-cli": "0.35.0",
     "prettier": "3.0.0",
+    "semver": "7.5.4",
     "typescript": "5.1.6"
   }
 }

@@ -62,6 +62,9 @@ importers:
       prettier:
         specifier: 3.0.0
         version: 3.0.0
+      semver:
+        specifier: 7.5.4
+        version: 7.5.4
       typescript:
         specifier: 5.1.6
         version: 5.1.6
