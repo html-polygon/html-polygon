@@ -28,8 +28,6 @@ jobs:
       run: pnpm install --frozen-lockfile
 
     # get latest version number
-    - name: Install semver package
-      run: pnpm add --workspace-root semver
     - name: Retrieve the latest release and current package versions
       id: get-releases
       uses: actions/github-script@v6
@@ -119,8 +117,6 @@ jobs:
             latest: latestReleaseVersion,
             latestIsNew: semver.gt(workspacePackageVersion, latestReleaseVersion)
           }
-    - name: Uninstall semver package 
-      run: git restore . && pnpm install --frozen-lockfile
 
     # release to npm
     - name: Release Core to NPM
