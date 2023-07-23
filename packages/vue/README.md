@@ -2,7 +2,7 @@
 
 HTML Polygon is a polygon element generator for the following web frameworks:
 
-* [React](../react)
+* [React](.https://github.com/html-polygon/html-polygon/tree/main/packages/react)
 * Vue 3 ← this package
 
 Visit the playground and complete documentation at [the HTML Polygon website](https://html-polygon.com).
