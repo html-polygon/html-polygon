@@ -10,22 +10,29 @@ const packageJson = JSON.parse(readFileSync(packageURL).toString())
 const distPackagePath = join('..', '..', 'dist', 'package.json')
 const distPackageURL = fileURLToPath(new URL(distPackagePath, import.meta.url))
 
-const distPackageJson = { ...packageJson }
-delete distPackageJson.devDependencies
-delete distPackageJson.files
-delete distPackageJson.packageManager
-delete distPackageJson.scripts
-distPackageJson.main = 'index.js'
-distPackageJson.types = 'types/index.d.ts'
-const distPackageContents = JSON.stringify(distPackageJson, null, '  ')
+delete packageJson.devDependencies
+delete packageJson.files
+delete packageJson.packageManager
+delete packageJson.scripts
+packageJson.main = 'index.js'
+packageJson.types = 'types/index.d.ts'
+const distPackageContents = JSON.stringify(packageJson, null, '  ')
 writeFileSync(distPackageURL, distPackageContents.concat('\n'))
 
 // Copy README and LICENSE
-const docFiles = ['README.md', join('..', '..', 'LICENSE.md')]
-docFiles.forEach((docFile) => {
-  const docPath = join('..', '..', docFile)
-  const docURL = fileURLToPath(new URL(docPath, import.meta.url))
-  const docPackagePath = join('..', '..', 'dist', docFile)
-  const docPackageURL = fileURLToPath(new URL(docPackagePath, import.meta.url))
-  copyFileSync(docURL, docPackageURL)
+const docFilePaths = [
+  {
+    source: join('..', '..', 'README.md'),
+    destination: join('..', '..', 'dist', 'README.md'),
+  },
+  {
+    source: join('..', '..', '..', '..', 'LICENSE.md'),
+    destination: join('..', '..', 'dist', 'LICENSE.md'),
+  },
+]
+docFilePaths.forEach(({ source, destination }) => {
+  copyFileSync(
+    fileURLToPath(new URL(source, import.meta.url)),
+    fileURLToPath(new URL(destination, import.meta.url))
+  )
 })
