@@ -10,9 +10,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sambauers/html-polygon.git"
+    "url": "git://github.com/html-polygon/html-polygon.git"
   },
-  "homepage": "https://html-polygon.sambauers.com",
+  "homepage": "https://html-polygon.com",
   "files": [
     "src/*"
   ],

@@ -5,7 +5,7 @@ HTML Polygon is a polygon element generator for the following web frameworks:
 * [React](../react)
 * Vue 3 ← this package
 
-Visit the playground and complete documentation at [the HTML Polygon website](https://html-polygon.sambauers.com).
+Visit the playground and complete documentation at [the HTML Polygon website](https://html-polygon.com).
 
 ## Install
 
@@ -42,7 +42,7 @@ Use the component:
 </Polygon>
 ```
 
-Complete documentation can be found at [the HTML Polygon website](https://html-polygon.sambauers.com).
+Complete documentation can be found at [the HTML Polygon website](https://html-polygon.com).
 
 ## Why?
 

@@ -11,9 +11,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sambauers/html-polygon.git"
+    "url": "git://github.com/html-polygon/html-polygon.git"
   },
-  "homepage": "https://html-polygon.sambauers.com",
+  "homepage": "https://html-polygon.com",
   "packageManager": "pnpm@8.6.9",
   "scripts": {
     "lint": "markdownlint *.md && eslint .",
