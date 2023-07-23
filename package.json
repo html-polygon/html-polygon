@@ -44,7 +44,7 @@
     "@swc/jest": "0.2.27",
     "@types/eslint": "8.44.0",
     "@types/jest": "29.5.3",
-    "@types/node": "20.4.3",
+    "@types/node": "20.4.4",
     "@types/prettier": "2.7.3",
     "@typescript-eslint/eslint-plugin": "6.1.0",
     "@typescript-eslint/parser": "6.1.0",
