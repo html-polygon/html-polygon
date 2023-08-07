@@ -6,6 +6,10 @@ updates:
       interval: "daily"
     open-pull-requests-limit: 10
     groups:
+      next:
+        patterns:
+          - "next"
+          - "eslint-config-next"
       typescript-eslint:
         patterns:
           - "@typescript-eslint/*"
