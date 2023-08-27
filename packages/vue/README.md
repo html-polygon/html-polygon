@@ -55,3 +55,6 @@ that "flows" into the shape to fill the polygon.
 
 This is where HTML Polygon differs. This component builds an HTML element that
 both looks like a polygon, and behaves like a polygon.
+
+You can use HTML Polygen to emulate the effects of the proposed CSS Shapes
+property `shape-inside`.
