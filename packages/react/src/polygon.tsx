@@ -3,7 +3,7 @@ import {
   isSimpleObject,
   mergeClassNames,
   PolygonClass,
-  type PolygonCoreParameters,
+  type PolygonClassParameters,
 } from '@html-polygon/core'
 import React, {
   type AriaAttributes,
@@ -17,7 +17,7 @@ import React, {
 } from 'react'
 
 export interface PolygonReactParameters
-  extends Omit<PolygonCoreParameters, 'hasChildren'>,
+  extends Omit<PolygonClassParameters, 'hasChildren'>,
     PropsWithChildren,
     AriaAttributes {
   borderColor?: string

@@ -9,7 +9,7 @@ import {
   spacingToRadius,
 } from './utilities'
 
-export interface PolygonCoreParameters {
+export interface PolygonClassParameters {
   sides: number | string
   margin?: number | string
   borderWidth?: number | string
@@ -70,7 +70,7 @@ export class PolygonClass {
     rotate,
     center,
     debug,
-  }: PolygonCoreParameters) {
+  }: PolygonClassParameters) {
     // sanitise parameters
     this.sides = clampNumber(getNumber(sides), 3)
     this.margin = clampNumber(getNumber(margin), 0, 50)
