@@ -63,7 +63,7 @@ export const Polygon = defineComponent({
       const safe = {
         borderColor: isNonEmptyString(props.borderColor)
           ? props.borderColor
-          : 'rgb(0, 0, 0)',
+          : undefined,
         borderClass: mergeClassNames('html-polygon-border', props.borderClass),
         borderStyle: isSimpleObject(props.borderStyle)
           ? props.borderStyle

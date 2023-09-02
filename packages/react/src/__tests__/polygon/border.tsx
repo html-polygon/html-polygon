@@ -13,9 +13,6 @@ describe('react', () => {
 
       const borderNode = result.getByTestId('test-border')
       expect(borderNode).not.toBeNull()
-      expect(borderNode.getAttribute('style')).toMatch(
-        /^background-color:\srgb\(0,\s0,\s0\)/
-      )
     })
 
     it('correctly renders a border with custom color', () => {
@@ -74,7 +71,7 @@ describe('react', () => {
       const borderNode = result.getByTestId('test-border')
       expect(borderNode).not.toBeNull()
       expect(borderNode.getAttribute('style')).toMatch(
-        /\sopacity:\s0.5;\soutline:\sthick\sdouble\sred;\s/
+        /^opacity:\s0.5;\soutline:\sthick\sdouble\sred;\s/
       )
     })
 

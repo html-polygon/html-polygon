@@ -100,7 +100,7 @@ const Polygon = forwardRef<HTMLDivElement, PolygonReactParameters>(
     // Sanitise inputs
     const safe = {
       // Default border color to black
-      borderColor: isNonEmptyString(borderColor) ? borderColor : 'rgb(0, 0, 0)',
+      borderColor: isNonEmptyString(borderColor) ? borderColor : undefined,
       borderClassName: mergeClassNames('html-polygon-border', borderClassName),
       borderStyle: isSimpleObject(borderStyle) ? borderStyle : undefined,
       idSuffix: isNonEmptyString(idSuffix) ? `-${idSuffix}` : '',
