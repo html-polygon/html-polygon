@@ -9,6 +9,10 @@ updates:
       typescript-eslint:
         patterns:
           - "@typescript-eslint/*"
+      jest:
+        patterns:
+          - "jest"
+          - "jest-environment-jsdom"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
