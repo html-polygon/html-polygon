@@ -58,5 +58,10 @@
     "prettier": "3.0.3",
     "semver": "7.5.4",
     "typescript": "5.2.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss": "^8.4.31"
+    }
   }
 }
