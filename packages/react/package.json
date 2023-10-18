@@ -7,7 +7,7 @@
     "html",
     "react"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -36,7 +36,7 @@
     "dev": "pnpm dev:prepare && concurrently \"pnpm compile --watch\" \"pnpm build:types --watch\""
   },
   "dependencies": {
-    "@html-polygon/core": "0.1.0"
+    "@html-polygon/core": "0.1.1"
   },
   "devDependencies": {
     "@testing-library/react": "14.0.0",
