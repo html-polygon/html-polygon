@@ -24,8 +24,8 @@ importers:
         specifier: 8.44.7
         version: 8.44.7
       '@types/jest':
-        specifier: 29.5.8
-        version: 29.5.8
+        specifier: 29.5.10
+        version: 29.5.10
       '@types/node':
         specifier: 20.9.0
         version: 20.9.0
@@ -619,7 +619,7 @@ packages:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.8.6
+      '@types/node': 20.9.0
       jest-mock: 29.7.0
     dev: true
 
@@ -646,7 +646,7 @@ packages:
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-      '@types/node': 20.8.6
+      '@types/node': 20.9.0
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -1170,8 +1170,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.2
     dev: true
 
-  /@types/jest@29.5.8:
-    resolution: {integrity: sha512-fXEFTxMV2Co8ZF5aYFJv+YeA08RTYJfhtN5c9JSv/mFEMe+xxjufCb+PHL+bJcMs/ebPUsBu+UNTEz+ydXrR6g==}
+  /@types/jest@29.5.10:
+    resolution: {integrity: sha512-tE4yxKEphEyxj9s4inideLHktW/x6DwesIwWZ9NN1FKf9zbJYsnhBoA9vrHA/IuIOKwPa5PcFBNV4lpMIOEzyQ==}
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
@@ -1180,7 +1180,7 @@ packages:
   /@types/jsdom@20.0.1:
     resolution: {integrity: sha512-d0r18sZPmMQr1eG35u12FZfhIXNrnsPU/g5wvRKCUf/tOGilKKwYMYGqh33BNR6ba+2gkHw1EUiHoN3mn7E5IQ==}
     dependencies:
-      '@types/node': 20.8.6
+      '@types/node': 20.9.0
       '@types/tough-cookie': 4.0.2
       parse5: 7.1.2
     dev: true
@@ -3482,7 +3482,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.8.6
+      '@types/node': 20.9.0
       jest-util: 29.7.0
     dev: true
 
@@ -3620,7 +3620,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.8.6
+      '@types/node': 20.9.0
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
