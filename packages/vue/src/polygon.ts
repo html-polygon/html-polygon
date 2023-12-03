@@ -102,8 +102,8 @@ export const Polygon = defineComponent({
                   ? 'rgba(255, 255, 0, 0.25)'
                   : 'rgba(0, 255, 255, 0.25)'
                 : key % 4 === 1
-                ? 'rgba(255, 0, 255, 0.25)'
-                : 'rgba(0, 0, 255, 0.25)'
+                  ? 'rgba(255, 0, 255, 0.25)'
+                  : 'rgba(0, 0, 255, 0.25)'
               : ''
 
             return h('div', {

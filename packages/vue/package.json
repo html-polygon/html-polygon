@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@vue/tsconfig": "0.4.0",
-    "vue": "3.3.8"
+    "vue": "3.3.9"
   },
   "peerDependencies": {
     "vue": ">=3.3.0"
