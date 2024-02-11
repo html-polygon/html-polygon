@@ -15,9 +15,9 @@ jobs:
     # install
     - name: Setup PNPM
       if: 
-      uses: pnpm/action-setup@v2
+      uses: pnpm/action-setup@v3
       with:
-        version: 8.11.0
+        version: 8.15.1
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
