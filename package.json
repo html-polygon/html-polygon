@@ -19,7 +19,7 @@
     "lint": "markdownlint *.md && eslint .",
     "test": "jest --coverage",
     "regenerate-pnpm-lock": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules && rm pnpm-lock.yaml && pnpm install",
-    "increment-release": "swc ./scripts/increment-release.ts --out-dir ./build && node ./build/increment-release.js",
+    "increment-release": "swc ./scripts/increment-release.ts --out-dir ./build  --strip-leading-paths && node ./build/increment-release.js",
     "increment-release-patch": "pnpm increment-release --patch && rm -rf ./build",
     "increment-release-minor": "pnpm increment-release --minor && rm -rf ./build",
     "increment-release-major": "pnpm increment-release --major && rm -rf ./build",
