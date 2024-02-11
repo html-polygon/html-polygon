@@ -21,10 +21,10 @@
   "packageManager": "pnpm@8.9.2",
   "scripts": {
     "clean": "rm -rf ./dist",
-    "lint": "markdownlint *.md && eslint --config ../../.eslintrc.js --ignore-path ../../.eslintignore  .",
+    "lint": "markdownlint *.md && eslint --config ../../.eslintrc.js --ignore-path ../../.eslintignore .",
     "test": "jest --config ../../jest.config.js --selectProjects packages/react",
-    "compile": "swc --config-file ../../.swcrc ./src --out-dir ./dist",
-    "compile:scripts": "swc --config-file ../../.swcrc ../../scripts --out-dir ./build",
+    "compile": "swc --config-file ../../.swcrc ./src --out-dir ./dist --strip-leading-paths",
+    "compile:scripts": "swc --config-file ../../.swcrc ../../scripts --out-dir ./build --strip-leading-paths",
     "clean:scripts": "rm -rf ./build/scripts",
     "clean:build": "rm -rf ./build",
     "copy-release-files": "pnpm compile:scripts && node ./build/scripts/copy-release-files.js && pnpm clean:scripts && pnpm clean:build",
@@ -39,9 +39,9 @@
     "@html-polygon/core": "0.1.2"
   },
   "devDependencies": {
-    "@testing-library/react": "14.1.2",
-    "@tsconfig/create-react-app": "2.0.1",
-    "@types/react": "18.2.41",
+    "@testing-library/react": "14.2.1",
+    "@tsconfig/create-react-app": "2.0.2",
+    "@types/react": "18.2.55",
     "jest-environment-jsdom": "29.7.0",
     "react": "18.2.0"
   },

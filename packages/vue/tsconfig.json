@@ -7,7 +7,9 @@
     "removeComments": true,
     "declaration": true,
     "declarationMap": false,
-    "declarationDir": "./dist/types"
+    "declarationDir": "./dist/types",
+    // the base config sets this to true, so turn it to false here
+    "noEmit": false,
   },
   "exclude": ["./node_modules"],
   "files": ["src/index.ts"]

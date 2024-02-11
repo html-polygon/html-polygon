@@ -22,10 +22,10 @@
   "packageManager": "pnpm@8.9.2",
   "scripts": {
     "clean": "rm -rf ./dist",
-    "lint": "markdownlint *.md && eslint --config ../../.eslintrc.js --ignore-path ../../.eslintignore  .",
+    "lint": "markdownlint *.md && eslint --config ../../.eslintrc.js --ignore-path ../../.eslintignore .",
     "test": "echo 'No tests yet.'",
-    "compile": "swc --config-file ../../.swcrc ./src --out-dir ./dist",
-    "compile:scripts": "swc --config-file ../../.swcrc ../../scripts --out-dir ./build",
+    "compile": "swc --config-file ../../.swcrc ./src --out-dir ./dist --strip-leading-paths",
+    "compile:scripts": "swc --config-file ../../.swcrc ../../scripts --out-dir ./build --strip-leading-paths",
     "clean:scripts": "rm -rf ./build/scripts",
     "clean:build": "rm -rf ./build",
     "copy-release-files": "pnpm compile:scripts && node ./build/scripts/copy-release-files.js && pnpm clean:scripts && pnpm clean:build",
@@ -40,8 +40,8 @@
     "@html-polygon/core": "0.1.2"
   },
   "devDependencies": {
-    "@vue/tsconfig": "0.4.0",
-    "vue": "3.3.9"
+    "@vue/tsconfig": "0.5.1",
+    "vue": "3.4.18"
   },
   "peerDependencies": {
     "vue": ">=3.3.0"
