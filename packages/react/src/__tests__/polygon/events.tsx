@@ -21,7 +21,7 @@ describe('react', () => {
           onMouseUp={handleEvent}
           onMouseOver={handleEvent}
           onMouseOut={handleEvent}
-        />
+        />,
       )
 
       // get the polygon node and the data toggle should not be defined

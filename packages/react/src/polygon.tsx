@@ -62,7 +62,7 @@ const Polygon = forwardRef<HTMLDivElement, PolygonReactParameters>(
       children,
       ...ariaAttributes
     },
-    ref
+    ref,
   ) => {
     let hasChildren = false
     Children.forEach(children, (child) => {
@@ -107,7 +107,7 @@ const Polygon = forwardRef<HTMLDivElement, PolygonReactParameters>(
       className: mergeClassNames(
         'html-polygon',
         `html-polygon-sides-${polygon.sides}`,
-        className
+        className,
       ),
       style: isSimpleObject(style) ? style : undefined,
       onMouseOver: typeof onMouseOver === 'function' ? onMouseOver : undefined,
@@ -318,7 +318,7 @@ const Polygon = forwardRef<HTMLDivElement, PolygonReactParameters>(
         {contentElement}
       </div>
     )
-  }
+  },
 )
 Polygon.displayName = 'Polygon'
 export { Polygon }

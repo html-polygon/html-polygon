@@ -27,7 +27,7 @@ describe('core', () => {
         expect(polygon.getPrivate('radiusBorder')).toBe(50)
         expect(polygon.getPrivate('radiusPadding')).toBe(50)
         expect(polygon.getPrivate('pointsMain')).toEqual(
-          expect.arrayContaining([{ x: 50, y: 0 }])
+          expect.arrayContaining([{ x: 50, y: 0 }]),
         )
         expect(polygon.getPrivate('pointsBorder')).toEqual([])
         expect(polygon.getPrivate('pointsPadding')).toEqual([])

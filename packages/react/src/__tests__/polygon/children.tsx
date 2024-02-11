@@ -14,7 +14,7 @@ describe('react', () => {
             dataTestId={`test${key}`}
             sides={3}
             children={invalidChild}
-          />
+          />,
         )
 
         // get the polygon node
@@ -41,7 +41,7 @@ describe('react', () => {
         <Polygon dataTestId='test' sides={3}>
           <span>One</span>
           <span>Two</span>
-        </Polygon>
+        </Polygon>,
       )
 
       // get the polygon node

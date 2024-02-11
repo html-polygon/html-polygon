@@ -44,7 +44,7 @@ packageNames.forEach((packageName) => {
   if (packageName !== 'core') {
     const corePackageVersion = packageJson.dependencies['@html-polygon/core']
     console.info(
-      `------> Current core dependency version is ${corePackageVersion}`
+      `------> Current core dependency version is ${corePackageVersion}`,
     )
     if (rootCurrentVersion !== corePackageVersion) {
       console.error('! Error: misaligned core dependency version')

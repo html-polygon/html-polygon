@@ -90,7 +90,7 @@ export const Polygon = defineComponent({
                     }
                   : {}),
               },
-            })
+            }),
           )
         }
 
@@ -129,7 +129,7 @@ export const Polygon = defineComponent({
                   : {}),
               },
             })
-          })
+          }),
         )
 
         if (polygon.bufferBottom > 0) {
@@ -152,7 +152,7 @@ export const Polygon = defineComponent({
                     }
                   : {}),
               },
-            })
+            }),
           )
         }
 
@@ -213,9 +213,9 @@ export const Polygon = defineComponent({
                     })
                   : undefined,
                 ...paddedChildren,
-              ]
+              ],
             )
-          : paddedChildren
+          : paddedChildren,
       )
     }
   },

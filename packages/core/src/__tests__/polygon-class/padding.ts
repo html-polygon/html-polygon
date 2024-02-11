@@ -37,7 +37,7 @@ describe('core', () => {
               height: 60,
               points: expect.arrayContaining([{ x: 69.282, y: 100 }]),
             }),
-          ])
+          ]),
         )
         expect(polygon.bufferTop).toBe(10)
         expect(polygon.bufferBottom).toBe(30)
@@ -45,10 +45,10 @@ describe('core', () => {
         expect(polygon.getPrivate('padding')).toBe(5)
         expect(polygon.getPrivate('radiusPadding')).toBe(40)
         expect(polygon.getPrivate('pointsPadding')).toEqual(
-          expect.arrayContaining([{ x: 50, y: 10 }])
+          expect.arrayContaining([{ x: 50, y: 10 }]),
         )
         expect(polygon.getPrivate('pointsPaddingByY')).toEqual(
-          expect.arrayContaining([{ x: 50, y: 10 }])
+          expect.arrayContaining([{ x: 50, y: 10 }]),
         )
       })
 
@@ -70,7 +70,7 @@ describe('core', () => {
               height: 42.929,
               points: expect.arrayContaining([{ x: 85.858, y: 100 }]),
             }),
-          ])
+          ]),
         )
         expect(polygon.bufferTop).toBe(7.071)
         expect(polygon.bufferBottom).toBe(7.071)
@@ -78,10 +78,10 @@ describe('core', () => {
         expect(polygon.getPrivate('padding')).toBe(5)
         expect(polygon.getPrivate('radiusPadding')).toBe(42.928932188134524)
         expect(polygon.getPrivate('pointsPadding')).toEqual(
-          expect.arrayContaining([{ x: 50, y: 7.071 }])
+          expect.arrayContaining([{ x: 50, y: 7.071 }]),
         )
         expect(polygon.getPrivate('pointsPaddingByY')).toEqual(
-          expect.arrayContaining([{ x: 50, y: 7.071 }])
+          expect.arrayContaining([{ x: 50, y: 7.071 }]),
         )
       })
 
@@ -104,7 +104,7 @@ describe('core', () => {
               height: 56.753,
               points: expect.arrayContaining([{ x: 56.895, y: 100 }]),
             }),
-          ])
+          ]),
         )
         expect(polygon.bufferTop).toBe(10.152)
         expect(polygon.bufferBottom).toBe(27.057)
@@ -112,10 +112,10 @@ describe('core', () => {
         expect(polygon.getPrivate('padding')).toBe(5)
         expect(polygon.getPrivate('radiusPadding')).toBe(40)
         expect(polygon.getPrivate('pointsPadding')).toEqual(
-          expect.arrayContaining([{ x: 53.486, y: 10.152 }])
+          expect.arrayContaining([{ x: 53.486, y: 10.152 }]),
         )
         expect(polygon.getPrivate('pointsPaddingByY')).toEqual(
-          expect.arrayContaining([{ x: 53.486, y: 10.152 }])
+          expect.arrayContaining([{ x: 53.486, y: 10.152 }]),
         )
       })
 
@@ -138,7 +138,7 @@ describe('core', () => {
               height: 56.753,
               points: expect.arrayContaining([{ x: 74.296, y: 100 }]),
             }),
-          ])
+          ]),
         )
         expect(polygon.bufferTop).toBe(10.152)
         expect(polygon.bufferBottom).toBe(27.057)
@@ -146,10 +146,10 @@ describe('core', () => {
         expect(polygon.getPrivate('padding')).toBe(5)
         expect(polygon.getPrivate('radiusPadding')).toBe(40)
         expect(polygon.getPrivate('pointsPadding')).toEqual(
-          expect.arrayContaining([{ x: 46.514, y: 10.152 }])
+          expect.arrayContaining([{ x: 46.514, y: 10.152 }]),
         )
         expect(polygon.getPrivate('pointsPaddingByY')).toEqual(
-          expect.arrayContaining([{ x: 46.514, y: 10.152 }])
+          expect.arrayContaining([{ x: 46.514, y: 10.152 }]),
         )
       })
     })

@@ -88,11 +88,11 @@ export class PolygonClass {
     this.radiusMain = Math.max(0, 50 - spacingToRadius(this.sides, this.margin))
     this.radiusBorder = Math.max(
       0,
-      this.radiusMain - spacingToRadius(this.sides, this.borderWidth)
+      this.radiusMain - spacingToRadius(this.sides, this.borderWidth),
     )
     this.radiusPadding = Math.max(
       0,
-      this.radiusBorder - spacingToRadius(this.sides, this.padding)
+      this.radiusBorder - spacingToRadius(this.sides, this.padding),
     )
 
     // points
@@ -169,7 +169,7 @@ export class PolygonClass {
       { x: 100, y: 100 },
       { x: 0, y: 100 },
       { x: 0, y: 0 },
-      { x: points[0].x, y: 0 }
+      { x: points[0].x, y: 0 },
     )
 
     return points
@@ -184,7 +184,7 @@ export class PolygonClass {
       .reduce<ShapeSlicePoint[]>((acc, current) => {
         // Get the index of an existing y value
         const verticalPointIndex = acc.findIndex(
-          (verticalPoint) => verticalPoint.y === current.y
+          (verticalPoint) => verticalPoint.y === current.y,
         )
 
         if (verticalPointIndex === -1) {

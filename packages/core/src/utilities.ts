@@ -20,7 +20,7 @@ export const getNumber = (maybeNumber?: number | string): number => {
 export const clampNumber = (
   value: number,
   min?: number,
-  max?: number
+  max?: number,
 ): number => {
   if (!isFiniteNumber(value)) {
     return value

@@ -136,13 +136,13 @@ describe('core', () => {
         expect(mergeClassNames('one', true, 'three')).toBe('one three')
         expect(mergeClassNames('one', 1234, 'three')).toBe('one three')
         expect(mergeClassNames('one', { an: 'object' }, 'three')).toBe(
-          'one three'
+          'one three',
         )
       })
 
       it('trims class names', () => {
         expect(mergeClassNames('  one', 'two  ', '  three  ')).toBe(
-          'one two three'
+          'one two three',
         )
       })
     })

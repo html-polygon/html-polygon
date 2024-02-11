@@ -14,7 +14,7 @@ describe('react', () => {
       const polygonNode = result.getByTestId('test')
       expect(polygonNode).not.toBeNull()
       expect(polygonNode.getAttribute('style')).toMatch(
-        /^clip-path:\spolygon\(50%\s10%,\s/
+        /^clip-path:\spolygon\(50%\s10%,\s/,
       )
     })
 
@@ -23,7 +23,7 @@ describe('react', () => {
       const result = render(
         <Polygon dataTestId='test' sides={3} margin={5}>
           Text
-        </Polygon>
+        </Polygon>,
       )
 
       // there should be a top buffer node with styles
@@ -42,7 +42,7 @@ describe('react', () => {
         const bufferSideNode = result.getByTestId(`test-buffer-side-${key}`)
         expect(bufferSideNode).not.toBeNull()
         expect(bufferSideNode.getAttribute('style')).toMatch(
-          new RegExp(`^clear:\\s${position};`)
+          new RegExp(`^clear:\\s${position};`),
         )
         expect(bufferSideNode.getAttribute('style')).toMatch(/\swidth:\s50%;\s/)
       })

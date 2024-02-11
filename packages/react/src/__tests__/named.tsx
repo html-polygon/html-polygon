@@ -49,7 +49,7 @@ describe('react', () => {
 
           // render the polygon
           const polygonResult = render(
-            <Polygon dataTestId='testPolygon' sides={sides} />
+            <Polygon dataTestId='testPolygon' sides={sides} />,
           )
 
           // get the polygon node and the classnames should include the correct
@@ -83,7 +83,7 @@ describe('react', () => {
               dataTestId={`test${name}`}
               onClick={clickHandler}
               ref={ref}
-            />
+            />,
           )
 
           // get the shape node and the data toggle should not be defined

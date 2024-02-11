@@ -33,6 +33,6 @@ const docFilePaths = [
 docFilePaths.forEach(({ source, destination }) => {
   copyFileSync(
     fileURLToPath(new URL(source, import.meta.url)),
-    fileURLToPath(new URL(destination, import.meta.url))
+    fileURLToPath(new URL(destination, import.meta.url)),
   )
 })

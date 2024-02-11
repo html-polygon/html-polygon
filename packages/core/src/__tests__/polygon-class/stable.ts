@@ -13,7 +13,7 @@ describe('core', () => {
         expect(polygon.getPrivate('rotate')).toBe(0)
         expect(polygon.getPrivate('isEven')).toBe(false)
         expect(polygon.getPrivate('pointsMain')).toEqual(
-          expect.arrayContaining([{ x: 50, y: 0 }])
+          expect.arrayContaining([{ x: 50, y: 0 }]),
         )
       })
 
@@ -23,7 +23,7 @@ describe('core', () => {
         expect(polygon.getPrivate('rotate')).toBe(0)
         expect(polygon.getPrivate('isEven')).toBe(false)
         expect(polygon.getPrivate('pointsMain')).toEqual(
-          expect.arrayContaining([{ x: 50, y: 0 }])
+          expect.arrayContaining([{ x: 50, y: 0 }]),
         )
       })
 
@@ -33,7 +33,7 @@ describe('core', () => {
         expect(polygon.getPrivate('rotate')).toBe(0)
         expect(polygon.getPrivate('isEven')).toBe(false)
         expect(polygon.getPrivate('pointsMain')).toEqual(
-          expect.arrayContaining([{ x: 50, y: 0 }])
+          expect.arrayContaining([{ x: 50, y: 0 }]),
         )
       })
 
@@ -43,7 +43,7 @@ describe('core', () => {
         expect(polygon.getPrivate('rotate')).toBe(0)
         expect(polygon.getPrivate('isEven')).toBe(true)
         expect(polygon.getPrivate('pointsMain')).toEqual(
-          expect.arrayContaining([{ x: 14.645, y: 14.645 }])
+          expect.arrayContaining([{ x: 14.645, y: 14.645 }]),
         )
       })
 
@@ -53,7 +53,7 @@ describe('core', () => {
         expect(polygon.getPrivate('rotate')).toBe(0)
         expect(polygon.getPrivate('isEven')).toBe(true)
         expect(polygon.getPrivate('pointsMain')).toEqual(
-          expect.arrayContaining([{ x: 50, y: 0 }])
+          expect.arrayContaining([{ x: 50, y: 0 }]),
         )
       })
     })

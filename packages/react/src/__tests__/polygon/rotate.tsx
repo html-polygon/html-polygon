@@ -12,7 +12,7 @@ describe('react', () => {
       // get the polygon node and the clip-path should start at a certain point
       const polygonNode = result.getByTestId('test')
       expect(polygonNode.getAttribute('style')).toMatch(
-        /^clip-path:\spolygon\(50%\s0%,\s.+\);$/
+        /^clip-path:\spolygon\(50%\s0%,\s.+\);$/,
       )
     })
 
@@ -21,13 +21,13 @@ describe('react', () => {
       const result = render(
         <Polygon dataTestId='test' sides={3} rotate={0}>
           Text
-        </Polygon>
+        </Polygon>,
       )
 
       // get the polygon node and the clip-path should start at a certain point
       const polygonNode = result.getByTestId('test')
       expect(polygonNode.getAttribute('style')).toMatch(
-        /^clip-path:\spolygon\(50%\s0%,\s.+\);$/
+        /^clip-path:\spolygon\(50%\s0%,\s.+\);$/,
       )
 
       // there should not be a top buffer node
@@ -45,7 +45,7 @@ describe('react', () => {
         const bufferSideNode = result.getByTestId(`test-buffer-side-${key}`)
         expect(bufferSideNode).not.toBeNull()
         expect(bufferSideNode.getAttribute('style')).toMatch(
-          new RegExp(`^clear:\\s${position};`)
+          new RegExp(`^clear:\\s${position};`),
         )
         expect(bufferSideNode.getAttribute('style')).toMatch(/\swidth:\s/)
       })
@@ -58,20 +58,20 @@ describe('react', () => {
       // get the polygon node and the clip-path should start at a certain point
       const polygonNode = result.getByTestId('test')
       expect(polygonNode.getAttribute('style')).toMatch(
-        /^clip-path:\spolygon\(100%\s50%,\s.+\);$/
+        /^clip-path:\spolygon\(100%\s50%,\s.+\);$/,
       )
     })
 
     it(`rotates 180`, () => {
       // render the polygon
       const result = render(
-        <Polygon dataTestId='test' sides={3} rotate={180} />
+        <Polygon dataTestId='test' sides={3} rotate={180} />,
       )
 
       // get the polygon node and the clip-path should end at a certain point
       const polygonNode = result.getByTestId('test')
       expect(polygonNode.getAttribute('style')).toMatch(
-        /^clip-path:\spolygon\(.+,\s50%\s100%\);$/
+        /^clip-path:\spolygon\(.+,\s50%\s100%\);$/,
       )
     })
 
@@ -80,13 +80,13 @@ describe('react', () => {
       const result = render(
         <Polygon dataTestId='test' sides={3} rotate={180}>
           Text
-        </Polygon>
+        </Polygon>,
       )
 
       // get the polygon node and the clip-path should start at a certain point
       const polygonNode = result.getByTestId('test')
       expect(polygonNode.getAttribute('style')).toMatch(
-        /^clip-path:\spolygon\(.+,\s50%\s100%\);$/
+        /^clip-path:\spolygon\(.+,\s50%\s100%\);$/,
       )
 
       // there should be a top buffer node with styles
@@ -104,7 +104,7 @@ describe('react', () => {
         const bufferSideNode = result.getByTestId(`test-buffer-side-${key}`)
         expect(bufferSideNode).not.toBeNull()
         expect(bufferSideNode.getAttribute('style')).toMatch(
-          new RegExp(`^clear:\\s${position};`)
+          new RegExp(`^clear:\\s${position};`),
         )
         expect(bufferSideNode.getAttribute('style')).toMatch(/\swidth:\s/)
       })
@@ -113,26 +113,26 @@ describe('react', () => {
     it(`rotates 270`, () => {
       // render the polygon
       const result = render(
-        <Polygon dataTestId='test' sides={3} rotate={270} />
+        <Polygon dataTestId='test' sides={3} rotate={270} />,
       )
 
       // get the polygon node and the clip-path should end at a certain point
       const polygonNode = result.getByTestId('test')
       expect(polygonNode.getAttribute('style')).toMatch(
-        /^clip-path:\spolygon\(.+,\s0%\s50%,\s.+\);$/
+        /^clip-path:\spolygon\(.+,\s0%\s50%,\s.+\);$/,
       )
     })
 
     it(`rotates -90`, () => {
       // render the polygon
       const result = render(
-        <Polygon dataTestId='test' sides={3} rotate={-90} />
+        <Polygon dataTestId='test' sides={3} rotate={-90} />,
       )
 
       // get the polygon node and the clip-path should end at a certain point
       const polygonNode = result.getByTestId('test')
       expect(polygonNode.getAttribute('style')).toMatch(
-        /^clip-path:\spolygon\(0%\s50%,\s.+\);$/
+        /^clip-path:\spolygon\(0%\s50%,\s.+\);$/,
       )
     })
 
@@ -141,14 +141,14 @@ describe('react', () => {
       const result = render(
         <Polygon dataTestId='test' sides={3} rotate={45}>
           Text
-        </Polygon>
+        </Polygon>,
       )
 
       // get the side buffer node 0
       const bufferSide0Node = result.getByTestId('test-buffer-side-0')
       expect(bufferSide0Node.getAttribute('style')).toMatch(/\smargin-right:\s/)
       expect(bufferSide0Node.getAttribute('style')).not.toMatch(
-        /\smargin-right:\s0px;/
+        /\smargin-right:\s0px;/,
       )
     })
 
@@ -157,14 +157,14 @@ describe('react', () => {
       const result = render(
         <Polygon dataTestId='test' sides={3} rotate={-45}>
           Text
-        </Polygon>
+        </Polygon>,
       )
 
       // get the side buffer node 0
       const bufferSide1Node = result.getByTestId('test-buffer-side-1')
       expect(bufferSide1Node.getAttribute('style')).toMatch(/\smargin-left:\s/)
       expect(bufferSide1Node.getAttribute('style')).not.toMatch(
-        /\smargin-left:\s0px;/
+        /\smargin-left:\s0px;/,
       )
     })
   })

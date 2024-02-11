@@ -12,7 +12,7 @@ describe('core', () => {
         expect(polygon.polygonMain).toMatch(/^50%\s0%,\s/)
         expect(polygon.getPrivate('center')).toEqual({ x: 50, y: 50 })
         expect(polygon.getPrivate('pointsMain')).toEqual(
-          expect.arrayContaining([{ x: 50, y: 0 }])
+          expect.arrayContaining([{ x: 50, y: 0 }]),
         )
       })
 
@@ -24,7 +24,7 @@ describe('core', () => {
         expect(polygon.polygonMain).toMatch(/^60%\s10%,\s/)
         expect(polygon.getPrivate('center')).toEqual({ x: 60, y: 60 })
         expect(polygon.getPrivate('pointsMain')).toEqual(
-          expect.arrayContaining([{ x: 60, y: 10 }])
+          expect.arrayContaining([{ x: 60, y: 10 }]),
         )
       })
     })

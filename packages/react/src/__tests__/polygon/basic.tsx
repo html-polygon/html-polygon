@@ -21,7 +21,7 @@ describe('react', () => {
       const result = render(
         <Polygon dataTestId='test' sides={3}>
           Text
-        </Polygon>
+        </Polygon>,
       )
 
       // get the polygon node and the classnames should include the the
@@ -45,7 +45,7 @@ describe('react', () => {
         const bufferSideNode = result.getByTestId(`test-buffer-side-${key}`)
         expect(bufferSideNode).not.toBeNull()
         expect(bufferSideNode.getAttribute('style')).toMatch(
-          new RegExp(`^clear:\\s${position};`)
+          new RegExp(`^clear:\\s${position};`),
         )
         expect(bufferSideNode.getAttribute('style')).toMatch(/\swidth:\s/)
       })
@@ -59,7 +59,7 @@ describe('react', () => {
           sides={3}
           borderWidth={5}
           idSuffix='testSuffix'
-        />
+        />,
       )
 
       // get the polygon node and the id should be suffixed
@@ -69,7 +69,7 @@ describe('react', () => {
       // get the border container node and the id should be suffixed
       const borderContainerNode = result.getByTestId('test-border-container')
       expect(borderContainerNode.id).toEqual(
-        'html-polygon-border-container-testSuffix'
+        'html-polygon-border-container-testSuffix',
       )
 
       // get the border node and the id should be suffixed
@@ -86,7 +86,7 @@ describe('react', () => {
           dataTestId='test'
           sides={3}
           className='my-class-one my-class-two'
-        />
+        />,
       )
 
       // get the polygon node and it should have the class names applied
@@ -111,14 +111,14 @@ describe('react', () => {
             opacity: 0.5,
             outline: 'thick double red',
           }}
-        />
+        />,
       )
 
       // get the polygon node and it should have applied the styles
       const polygonNode = result.getByTestId('test')
       expect(polygonNode).not.toBeNull()
       expect(polygonNode.getAttribute('style')).toMatch(
-        /^opacity:\s0.5;\soutline:\sthick\sdouble\sred;\s/
+        /^opacity:\s0.5;\soutline:\sthick\sdouble\sred;\s/,
       )
     })
 
@@ -137,7 +137,7 @@ describe('react', () => {
       const result = render(
         <Polygon sides={3} borderWidth={5} debug rotate={45}>
           Text
-        </Polygon>
+        </Polygon>,
       )
 
       // get the fragment

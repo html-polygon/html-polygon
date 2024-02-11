@@ -8,7 +8,7 @@ describe('react', () => {
     it('correctly renders a border with default style', () => {
       // render the polygon
       const result = render(
-        <Polygon dataTestId='test' sides={3} borderWidth={5} />
+        <Polygon dataTestId='test' sides={3} borderWidth={5} />,
       )
 
       const borderNode = result.getByTestId('test-border')
@@ -23,13 +23,13 @@ describe('react', () => {
           sides={3}
           borderWidth={5}
           borderColor='red'
-        />
+        />,
       )
 
       const borderNode = result.getByTestId('test-border')
       expect(borderNode).not.toBeNull()
       expect(borderNode.getAttribute('style')).toMatch(
-        /^background-color:\sred;\s/
+        /^background-color:\sred;\s/,
       )
     })
 
@@ -41,7 +41,7 @@ describe('react', () => {
           sides={3}
           borderWidth={5}
           borderClassName='my-border-class-one my-border-class-two'
-        />
+        />,
       )
 
       const borderNode = result.getByTestId('test-border')
@@ -65,13 +65,13 @@ describe('react', () => {
             opacity: 0.5,
             outline: 'thick double red',
           }}
-        />
+        />,
       )
 
       const borderNode = result.getByTestId('test-border')
       expect(borderNode).not.toBeNull()
       expect(borderNode.getAttribute('style')).toMatch(
-        /^opacity:\s0.5;\soutline:\sthick\sdouble\sred;\s/
+        /^opacity:\s0.5;\soutline:\sthick\sdouble\sred;\s/,
       )
     })
 
@@ -80,7 +80,7 @@ describe('react', () => {
       const result = render(
         <Polygon dataTestId='test' sides={3} borderWidth={5}>
           Text
-        </Polygon>
+        </Polygon>,
       )
 
       // there should be a top buffer node with styles
@@ -99,7 +99,7 @@ describe('react', () => {
         const bufferSideNode = result.getByTestId(`test-buffer-side-${key}`)
         expect(bufferSideNode).not.toBeNull()
         expect(bufferSideNode.getAttribute('style')).toMatch(
-          new RegExp(`^clear:\\s${position};`)
+          new RegExp(`^clear:\\s${position};`),
         )
         expect(bufferSideNode.getAttribute('style')).toMatch(/\swidth:\s50%;\s/)
       })

@@ -10,7 +10,7 @@ const namedFactory = (sides: number, name: string) => {
       <Polygon sides={sides} ref={ref} {...opts}>
         {children}
       </Polygon>
-    )
+    ),
   )
   Named.displayName = name
   return Named

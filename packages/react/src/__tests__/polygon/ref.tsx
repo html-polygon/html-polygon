@@ -19,7 +19,12 @@ describe('react', () => {
 
       // render the shape
       const result = render(
-        <Polygon dataTestId='test' sides={3} onClick={clickHandler} ref={ref} />
+        <Polygon
+          dataTestId='test'
+          sides={3}
+          onClick={clickHandler}
+          ref={ref}
+        />,
       )
 
       // get the polygon node and the data toggle should not be defined
