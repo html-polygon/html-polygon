@@ -6,13 +6,18 @@ updates:
       interval: "daily"
     open-pull-requests-limit: 10
     groups:
-      typescript-eslint:
+      eslint:
         patterns:
+          - "@types/eslint"
           - "@typescript-eslint/*"
+          - "eslint"
       jest:
         patterns:
           - "jest"
           - "jest-environment-jsdom"
+      swc:
+        patterns:
+          - "@swc/*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
