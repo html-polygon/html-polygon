@@ -39,9 +39,9 @@
     "@html-polygon/core": "0.1.3"
   },
   "devDependencies": {
-    "@testing-library/react": "14.2.1",
-    "@tsconfig/create-react-app": "2.0.2",
-    "@types/react": "18.2.55",
+    "@testing-library/react": "14.2.2",
+    "@tsconfig/create-react-app": "2.0.4",
+    "@types/react": "18.2.73",
     "jest-environment-jsdom": "29.7.0",
     "react": "18.2.0"
   },

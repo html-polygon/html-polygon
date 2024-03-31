@@ -35,6 +35,6 @@
     "dev": "pnpm dev:prepare && concurrently \"pnpm:compile --watch\" \"pnpm:build:types --watch\""
   },
   "devDependencies": {
-    "@tsconfig/create-react-app": "2.0.2"
+    "@tsconfig/create-react-app": "2.0.4"
   }
 }
