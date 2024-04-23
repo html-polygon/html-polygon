@@ -39,8 +39,8 @@
     "packages:dev": "pnpm --recursive --parallel run dev"
   },
   "devDependencies": {
-    "@swc/cli": "0.3.10",
-    "@swc/core": "1.4.11",
+    "@swc/cli": "0.3.12",
+    "@swc/core": "1.4.17",
     "@swc/jest": "0.2.36",
     "@types/eslint": "8.56.6",
     "@types/jest": "29.5.12",
