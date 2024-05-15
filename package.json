@@ -57,7 +57,7 @@
     "markdownlint-cli": "0.40.0",
     "prettier": "3.2.5",
     "semver": "7.6.0",
-    "typescript": "5.4.3"
+    "typescript": "5.4.5"
   },
   "pnpm": {
     "overrides": {
