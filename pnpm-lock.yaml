@@ -72,8 +72,8 @@ importers:
   packages/core:
     devDependencies:
       '@tsconfig/create-react-app':
-        specifier: 2.0.4
-        version: 2.0.4
+        specifier: 2.0.5
+        version: 2.0.5
 
   packages/react:
     dependencies:
@@ -85,8 +85,8 @@ importers:
         specifier: 15.0.7
         version: 15.0.7(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
       '@tsconfig/create-react-app':
-        specifier: 2.0.4
-        version: 2.0.4
+        specifier: 2.0.5
+        version: 2.0.5
       '@types/react':
         specifier: 18.3.1
         version: 18.3.1
@@ -1076,8 +1076,8 @@ packages:
     engines: {node: '>= 10'}
     dev: true
 
-  /@tsconfig/create-react-app@2.0.4:
-    resolution: {integrity: sha512-Irc7L6lebwalJ3zjQTWjBs4UkfM4S7t5W0rR30Sk2kRqi4MKZ98yKVe1d1Pi4GhI5ujWImfPeCoagexkHKMeXg==}
+  /@tsconfig/create-react-app@2.0.5:
+    resolution: {integrity: sha512-NiXzSMJabQtVTPwFmBWX+eyee2dfhRSnQ6NNbtCZfXemGxOq+N0+RMPVYu+sz6riUZANHTnvvHoS1k87ksyDXg==}
     dev: true
 
   /@types/aria-query@5.0.4:
