@@ -40,7 +40,7 @@
     "@html-polygon/core": "0.1.4"
   },
   "devDependencies": {
-    "@vue/tsconfig": "0.5.1",
+    "@vue/tsconfig": "0.7.0",
     "vue": "3.4.34"
   },
   "peerDependencies": {
